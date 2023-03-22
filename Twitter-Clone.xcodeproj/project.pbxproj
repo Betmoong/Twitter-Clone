@@ -13,6 +13,10 @@
 		5C4075A129CAD5160095FFDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C40759F29CAD5160095FFDB /* Main.storyboard */; };
 		5C4075A329CAD5170095FFDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C4075A229CAD5170095FFDB /* Assets.xcassets */; };
 		5C4075A629CAD5170095FFDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4075A429CAD5170095FFDB /* LaunchScreen.storyboard */; };
+		5CF432D929CB148200D7CECE /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432D829CB148200D7CECE /* FeedController.swift */; };
+		5CF432DB29CB14B000D7CECE /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432DA29CB14B000D7CECE /* ExploreController.swift */; };
+		5CF432E129CB14F900D7CECE /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432E029CB14F900D7CECE /* NotificationsController.swift */; };
+		5CF432E329CB151900D7CECE /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432E229CB151900D7CECE /* ConversationsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		5C4075A229CAD5170095FFDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C4075A529CAD5170095FFDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C4075A729CAD5170095FFDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CF432D829CB148200D7CECE /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		5CF432DA29CB14B000D7CECE /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
+		5CF432E029CB14F900D7CECE /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
+		5CF432E229CB151900D7CECE /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				5C320A3A29CAD87900D1265C /* MainTabController.swift */,
+				5CF432D829CB148200D7CECE /* FeedController.swift */,
+				5CF432DA29CB14B000D7CECE /* ExploreController.swift */,
+				5CF432E029CB14F900D7CECE /* NotificationsController.swift */,
+				5CF432E229CB151900D7CECE /* ConversationsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,8 +199,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C40759A29CAD5160095FFDB /* AppDelegate.swift in Sources */,
+				5CF432E329CB151900D7CECE /* ConversationsController.swift in Sources */,
+				5CF432DB29CB14B000D7CECE /* ExploreController.swift in Sources */,
 				5C40759C29CAD5160095FFDB /* SceneDelegate.swift in Sources */,
 				5C320A3B29CAD87900D1265C /* MainTabController.swift in Sources */,
+				5CF432E129CB14F900D7CECE /* NotificationsController.swift in Sources */,
+				5CF432D929CB148200D7CECE /* FeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
