@@ -14,6 +14,8 @@
 		5C4075A329CAD5170095FFDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C4075A229CAD5170095FFDB /* Assets.xcassets */; };
 		5C4075A629CAD5170095FFDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4075A429CAD5170095FFDB /* LaunchScreen.storyboard */; };
 		5CBDFF7A29CD8F6F00FB262B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDFF7929CD8F6F00FB262B /* Extensions.swift */; };
+		5CBDFF7F29CDBF0E00FB262B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDFF7E29CDBF0E00FB262B /* LoginController.swift */; };
+		5CBDFF8129CDBF9000FB262B /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDFF8029CDBF9000FB262B /* RegistrationController.swift */; };
 		5CF432D929CB148200D7CECE /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432D829CB148200D7CECE /* FeedController.swift */; };
 		5CF432DB29CB14B000D7CECE /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432DA29CB14B000D7CECE /* ExploreController.swift */; };
 		5CF432E129CB14F900D7CECE /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432E029CB14F900D7CECE /* NotificationsController.swift */; };
@@ -30,6 +32,8 @@
 		5C4075A529CAD5170095FFDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C4075A729CAD5170095FFDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CBDFF7929CD8F6F00FB262B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5CBDFF7E29CDBF0E00FB262B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		5CBDFF8029CDBF9000FB262B /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		5CF432D829CB148200D7CECE /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		5CF432DA29CB14B000D7CECE /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
 		5CF432E029CB14F900D7CECE /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 		5C4075B029CAD5A90095FFDB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5CBDFF7D29CDBEFE00FB262B /* Authentication */,
 				5C320A3A29CAD87900D1265C /* MainTabController.swift */,
 				5CF432D829CB148200D7CECE /* FeedController.swift */,
 				5CF432DA29CB14B000D7CECE /* ExploreController.swift */,
@@ -128,6 +133,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5CBDFF7D29CDBEFE00FB262B /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				5CBDFF7E29CDBF0E00FB262B /* LoginController.swift */,
+				5CBDFF8029CDBF9000FB262B /* RegistrationController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +222,8 @@
 				5C40759C29CAD5160095FFDB /* SceneDelegate.swift in Sources */,
 				5C320A3B29CAD87900D1265C /* MainTabController.swift in Sources */,
 				5CF432E129CB14F900D7CECE /* NotificationsController.swift in Sources */,
+				5CBDFF7F29CDBF0E00FB262B /* LoginController.swift in Sources */,
+				5CBDFF8129CDBF9000FB262B /* RegistrationController.swift in Sources */,
 				5CF432D929CB148200D7CECE /* FeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
