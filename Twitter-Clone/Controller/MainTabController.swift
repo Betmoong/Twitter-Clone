@@ -11,6 +11,15 @@ class MainTabController: UITabBarController {
 
     // MARK: - Properties
     
+    let actionButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .white
+        button.backgroundColor = .twitterBlue
+        button.setImage(UIImage(named: "new_tweet"), for: .normal)
+        button.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -18,9 +27,24 @@ class MainTabController: UITabBarController {
 
         view.backgroundColor = .systemGray5
         configureViewController()
+        configureUI()
+    }
+    
+    // MARK: - Selectors
+
+    @objc func actionButtonTapped() {
+        print("DEBUG: actionButtonTapped...")
     }
 
+
     // MARK: - Helpers
+    
+    func configureUI() {
+        view.addSubview(actionButton)
+        actionButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor,
+                            paddingBottom: 64, paddingRight: 16, width: 56, height: 56)
+        actionButton.layer.cornerRadius = 56 / 2
+    }
     
     func configureViewController() {
         
@@ -54,3 +78,4 @@ class MainTabController: UITabBarController {
     }
     
 }
+
