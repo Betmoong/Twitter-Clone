@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C2FAB9F29CF3E8900BCE64E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2FAB9E29CF3E8900BCE64E /* Utilities.swift */; };
 		5C320A3B29CAD87900D1265C /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C320A3A29CAD87900D1265C /* MainTabController.swift */; };
+		5C389A2C29D866F400A9D617 /* UploadTweetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C389A2B29D866F400A9D617 /* UploadTweetController.swift */; };
 		5C3BB55129D2C6150031EC59 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BB55029D2C6150031EC59 /* Constants.swift */; };
 		5C3BB55529D302B50031EC59 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3BB55429D302B50031EC59 /* AuthService.swift */; };
 		5C40759A29CAD5160095FFDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40759929CAD5160095FFDB /* AppDelegate.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		5C2FAB9E29CF3E8900BCE64E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		5C320A3A29CAD87900D1265C /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		5C389A2B29D866F400A9D617 /* UploadTweetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTweetController.swift; sourceTree = "<group>"; };
 		5C3BB55029D2C6150031EC59 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5C3BB55429D302B50031EC59 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5C40759629CAD5160095FFDB /* Twitter-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,7 @@
 				5CF432DA29CB14B000D7CECE /* ExploreController.swift */,
 				5CF432E029CB14F900D7CECE /* NotificationsController.swift */,
 				5CF432E229CB151900D7CECE /* ConversationsController.swift */,
+				5C389A2B29D866F400A9D617 /* UploadTweetController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				5C3BB55129D2C6150031EC59 /* Constants.swift in Sources */,
 				5CBDFF7A29CD8F6F00FB262B /* Extensions.swift in Sources */,
 				5C3BB55529D302B50031EC59 /* AuthService.swift in Sources */,
+				5C389A2C29D866F400A9D617 /* UploadTweetController.swift in Sources */,
 				5C9C84A629D54E110036691E /* User.swift in Sources */,
 				5C40759C29CAD5160095FFDB /* SceneDelegate.swift in Sources */,
 				5C320A3B29CAD87900D1265C /* MainTabController.swift in Sources */,
