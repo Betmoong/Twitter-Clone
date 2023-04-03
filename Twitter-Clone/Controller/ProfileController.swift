@@ -23,7 +23,12 @@ class ProfileController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     // MARK: - Helpers
@@ -43,7 +48,7 @@ class ProfileController: UICollectionViewController {
 
 extension ProfileController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 10
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
