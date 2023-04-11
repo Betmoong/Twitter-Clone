@@ -6,7 +6,10 @@
 //
 
 import UIKit
-import SDWebImage
+
+protocol TweetHeaderDelegate: AnyObject {
+    func showActionSheet()
+}
 
 class TweetHeader: UICollectionReusableView {
     
@@ -15,6 +18,8 @@ class TweetHeader: UICollectionReusableView {
     var tweet: Tweet? {
         didSet { configure() }
     }
+    
+    weak var delegate: TweetHeaderDelegate?
     
     private lazy var profileImageView: UIImageView = {
         let iv = UIImageView()
@@ -175,7 +180,7 @@ class TweetHeader: UICollectionReusableView {
     }
     
     @objc func showActionSheet() {
-        print(#function)
+        delegate?.showActionSheet()
     }
     
     @objc func handleCommentTapped() {
