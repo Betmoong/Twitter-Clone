@@ -18,6 +18,17 @@ class ActionSheetLauncher: NSObject {
     private let tableView = UITableView()
     private var window: UIWindow?
     
+    private lazy var blackView: UIView = {
+        let view = UIView()
+        view.alpha = 0
+        view.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleDismissal))
+        view.addGestureRecognizer(tap)
+        
+        return view
+    }()
+    
     // MARK: - Lifecycle
     
     init(user: User) {
@@ -25,6 +36,15 @@ class ActionSheetLauncher: NSObject {
         super.init()
         
         configureTableView()
+    }
+    
+    // MARK: - Selectors
+    
+    @objc func handleDismissal() {
+        UIView.animate(withDuration: 0.3) {
+            self.blackView.alpha = 0
+            self.tableView.frame.origin.y += 300
+        }
     }
     
     // MARK: - Helpers
@@ -37,9 +57,17 @@ class ActionSheetLauncher: NSObject {
         guard let window = windowScene?.windows.first(where: { $0.isKeyWindow }) else { return }
         self.window = window
         
+        window.addSubview(blackView)
+        blackView.frame = window.frame
+        
         window.addSubview(tableView)
-        tableView.frame = CGRect(x: 0, y: window.frame.height - 300,
+        tableView.frame = CGRect(x: 0, y: window.frame.height,
                                  width: window.frame.width, height: 300)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.blackView.alpha = 1
+            self.tableView.frame.origin.y -= 300
+        }
     }
     
     func configureTableView() {
