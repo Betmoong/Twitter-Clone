@@ -43,6 +43,7 @@
 		5CC5F11629E5513400E63D4B /* ActionSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5F11529E5513400E63D4B /* ActionSheetViewModel.swift */; };
 		5CCA530229E57DD80072FC9D /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA530129E57DD80072FC9D /* Notification.swift */; };
 		5CCA530429E580820072FC9D /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA530329E580820072FC9D /* NotificationService.swift */; };
+		5CCA530629E58BB80072FC9D /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA530529E58BB70072FC9D /* NotificationCell.swift */; };
 		5CF432D929CB148200D7CECE /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432D829CB148200D7CECE /* FeedController.swift */; };
 		5CF432DB29CB14B000D7CECE /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432DA29CB14B000D7CECE /* ExploreController.swift */; };
 		5CF432E129CB14F900D7CECE /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432E029CB14F900D7CECE /* NotificationsController.swift */; };
@@ -114,6 +115,7 @@
 		5CC5F11529E5513400E63D4B /* ActionSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewModel.swift; sourceTree = "<group>"; };
 		5CCA530129E57DD80072FC9D /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		5CCA530329E580820072FC9D /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		5CCA530529E58BB70072FC9D /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		5CF432D829CB148200D7CECE /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		5CF432DA29CB14B000D7CECE /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
 		5CF432E029CB14F900D7CECE /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				5C977E7F29E423D30012D732 /* UserCell.swift */,
 				5C977E8329E447380012D732 /* TweetHeader.swift */,
 				5CC5F11329E54E6600E63D4B /* ActionSheetCell.swift */,
+				5CCA530529E58BB70072FC9D /* NotificationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				5C977E8429E447380012D732 /* TweetHeader.swift in Sources */,
 				5C83251629DAB27F00A69E0A /* TweetViewModel.swift in Sources */,
 				5CC5F11629E5513400E63D4B /* ActionSheetViewModel.swift in Sources */,
+				5CCA530629E58BB80072FC9D /* NotificationCell.swift in Sources */,
 				5CBDFF7F29CDBF0E00FB262B /* LoginController.swift in Sources */,
 				5CBDFF8129CDBF9000FB262B /* RegistrationController.swift in Sources */,
 				5C83251C29DBCEEA00A69E0A /* ProfileFilterView.swift in Sources */,
