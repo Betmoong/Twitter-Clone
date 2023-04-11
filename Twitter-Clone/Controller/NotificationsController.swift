@@ -36,14 +36,17 @@ class NotificationsController: UITableViewController {
     func fetchNotifications() {
         NotificationService.shared.fetchNotifications { notifications in
             self.notifications = notifications
-            
-            for (index, notification) in notifications.enumerated() {
-                if case .follow = notification.type {
-                    let user = notification.user
-                    
-                    UserService.shared.checkIfUserIsFollowed(uid: user.uid) { isFollowed in
-                        self.notifications[index].user.isFollowed = isFollowed
-                    }
+            self.checkIfUserIsFollowed(notifications: notifications)
+        }
+    }
+    
+    func checkIfUserIsFollowed(notifications: [Notification]) {
+        for (index, notification) in notifications.enumerated() {
+            if case .follow = notification.type {
+                let user = notification.user
+                
+                UserService.shared.checkIfUserIsFollowed(uid: user.uid) { isFollowed in
+                    self.notifications[index].user.isFollowed = isFollowed
                 }
             }
         }
@@ -94,7 +97,17 @@ extension NotificationsController {
 
 extension NotificationsController: NotificationCellDelegate {
     func didTapFollow(_ cell: NotificationCell) {
-        print("DEBUG: Handle follow tap..")
+        guard let user = cell.notification?.user else { return }
+        
+        if user.isFollowed {
+            UserService.shared.unfollowUser(uid: user.uid) { err, ref in
+                cell.notification?.user.isFollowed = false
+            }
+        } else {
+            UserService.shared.followUser(uid: user.uid) { err, ref in
+                cell.notification?.user.isFollowed = true
+            }
+        }
     }
     
     func didTapProfileImage(_ cell: NotificationCell) {
