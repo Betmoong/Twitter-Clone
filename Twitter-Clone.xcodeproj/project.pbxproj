@@ -45,6 +45,7 @@
 		5CCA530429E580820072FC9D /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA530329E580820072FC9D /* NotificationService.swift */; };
 		5CCA530629E58BB80072FC9D /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA530529E58BB70072FC9D /* NotificationCell.swift */; };
 		5CCA530829E596B20072FC9D /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA530729E596B20072FC9D /* NotificationViewModel.swift */; };
+		5CCA530A29E6C0E00072FC9D /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA530929E6C0E00072FC9D /* EditProfileController.swift */; };
 		5CF432D929CB148200D7CECE /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432D829CB148200D7CECE /* FeedController.swift */; };
 		5CF432DB29CB14B000D7CECE /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432DA29CB14B000D7CECE /* ExploreController.swift */; };
 		5CF432E129CB14F900D7CECE /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432E029CB14F900D7CECE /* NotificationsController.swift */; };
@@ -118,6 +119,7 @@
 		5CCA530329E580820072FC9D /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		5CCA530529E58BB70072FC9D /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		5CCA530729E596B20072FC9D /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		5CCA530929E6C0E00072FC9D /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 		5CF432D829CB148200D7CECE /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		5CF432DA29CB14B000D7CECE /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
 		5CF432E029CB14F900D7CECE /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				5C389A2B29D866F400A9D617 /* UploadTweetController.swift */,
 				5C83251729DAE0B700A69E0A /* ProfileController.swift */,
 				5C977E8129E445A50012D732 /* TweetController.swift */,
+				5CCA530929E6C0E00072FC9D /* EditProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				5CF432E329CB151900D7CECE /* ConversationsController.swift in Sources */,
 				5C977E8029E423D30012D732 /* UserCell.swift in Sources */,
 				5C2FAB9F29CF3E8900BCE64E /* Utilities.swift in Sources */,
+				5CCA530A29E6C0E00072FC9D /* EditProfileController.swift in Sources */,
 				5CC5F11429E54E6600E63D4B /* ActionSheetCell.swift in Sources */,
 				5CF432DB29CB14B000D7CECE /* ExploreController.swift in Sources */,
 				5CCA530829E596B20072FC9D /* NotificationViewModel.swift in Sources */,
