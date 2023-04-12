@@ -22,12 +22,12 @@ class ProfileController: UICollectionViewController {
     
     private var tweets = [Tweet]()
     private var likedTweets = [Tweet]()
-    private var repliees = [Tweet]()
+    private var replies = [Tweet]()
     
     private var currentDataSource: [Tweet] {
         switch selectedFilter {
         case .tweets: return tweets
-        case .replies: return repliees
+        case .replies: return replies
         case .likes: return likedTweets
         }
     }
@@ -48,6 +48,7 @@ class ProfileController: UICollectionViewController {
         configureCollectionView()
         fetchTweets()
         fetchLikedTweets()
+        fetchReplies()
         checkIfUserIsFollowed()
         fetchUserStats()
     }
@@ -70,6 +71,12 @@ class ProfileController: UICollectionViewController {
     func fetchLikedTweets() {
         TweetService.shared.fetchLikes(forUser: user) { tweets in
             self.likedTweets = tweets
+        }
+    }
+    
+    func fetchReplies() {
+        TweetService.shared.fetchReplies(forUser: user) { tweets in
+            self.replies = tweets
         }
     }
     
