@@ -47,6 +47,8 @@
 		5CCA530829E596B20072FC9D /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA530729E596B20072FC9D /* NotificationViewModel.swift */; };
 		5CCA530A29E6C0E00072FC9D /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA530929E6C0E00072FC9D /* EditProfileController.swift */; };
 		5CCA530F29E6D1480072FC9D /* EditProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA530E29E6D1480072FC9D /* EditProfileHeader.swift */; };
+		5CCA531129E6D57D0072FC9D /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA531029E6D57D0072FC9D /* EditProfileViewModel.swift */; };
+		5CCA531329E6D6110072FC9D /* EditProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA531229E6D6110072FC9D /* EditProfileCell.swift */; };
 		5CF432D929CB148200D7CECE /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432D829CB148200D7CECE /* FeedController.swift */; };
 		5CF432DB29CB14B000D7CECE /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432DA29CB14B000D7CECE /* ExploreController.swift */; };
 		5CF432E129CB14F900D7CECE /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432E029CB14F900D7CECE /* NotificationsController.swift */; };
@@ -122,6 +124,8 @@
 		5CCA530729E596B20072FC9D /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		5CCA530929E6C0E00072FC9D /* EditProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 		5CCA530E29E6D1480072FC9D /* EditProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileHeader.swift; sourceTree = "<group>"; };
+		5CCA531029E6D57D0072FC9D /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		5CCA531229E6D6110072FC9D /* EditProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileCell.swift; sourceTree = "<group>"; };
 		5CF432D829CB148200D7CECE /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		5CF432DA29CB14B000D7CECE /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
 		5CF432E029CB14F900D7CECE /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 				5CC5F10F29E51F0600E63D4B /* UploadTweetViewModel.swift */,
 				5CC5F11529E5513400E63D4B /* ActionSheetViewModel.swift */,
 				5CCA530729E596B20072FC9D /* NotificationViewModel.swift */,
+				5CCA531029E6D57D0072FC9D /* EditProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				5C83251B29DBCEEA00A69E0A /* ProfileFilterView.swift */,
 				5C83251929DAEA8500A69E0A /* ProfileHeader.swift */,
 				5CCA530E29E6D1480072FC9D /* EditProfileHeader.swift */,
+				5CCA531229E6D6110072FC9D /* EditProfileCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 				5C83251829DAE0B700A69E0A /* ProfileController.swift in Sources */,
 				5CC5F11029E51F0600E63D4B /* UploadTweetViewModel.swift in Sources */,
 				5C83251A29DAEA8500A69E0A /* ProfileHeader.swift in Sources */,
+				5CCA531329E6D6110072FC9D /* EditProfileCell.swift in Sources */,
 				5C83251429DA8FB200A69E0A /* TweetCell.swift in Sources */,
 				5CBDFF7A29CD8F6F00FB262B /* Extensions.swift in Sources */,
 				5CCA530229E57DD80072FC9D /* Notification.swift in Sources */,
@@ -439,6 +446,7 @@
 				5C83251629DAB27F00A69E0A /* TweetViewModel.swift in Sources */,
 				5CC5F11629E5513400E63D4B /* ActionSheetViewModel.swift in Sources */,
 				5CCA530629E58BB80072FC9D /* NotificationCell.swift in Sources */,
+				5CCA531129E6D57D0072FC9D /* EditProfileViewModel.swift in Sources */,
 				5CBDFF7F29CDBF0E00FB262B /* LoginController.swift in Sources */,
 				5CBDFF8129CDBF9000FB262B /* RegistrationController.swift in Sources */,
 				5C83251C29DBCEEA00A69E0A /* ProfileFilterView.swift in Sources */,
