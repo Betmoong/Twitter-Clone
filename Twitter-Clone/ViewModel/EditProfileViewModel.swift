@@ -32,8 +32,8 @@ struct EditProfileViewModel {
     
     var optionValue: String? {
         switch option {
-        case .fullname: return user.username
-        case .username: return user.fullname
+        case .fullname: return user.fullname
+        case .username: return user.username
         case .bio: return user.bio
         }
     }
