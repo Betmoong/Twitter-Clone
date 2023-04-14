@@ -33,6 +33,7 @@ class InputTextView: UITextView {
         placeholderLabel.anchor(top: topAnchor, left: leftAnchor,
                                 paddingTop: 8, paddingLeft: 4)
         
+        // 텍스트가 변경될 때마다 호출
         NotificationCenter.default.addObserver(self, selector: #selector(handleTextInputChange),
                                                name: UITextView.textDidChangeNotification, object: nil)
     }
@@ -44,6 +45,7 @@ class InputTextView: UITextView {
     // MARK: - Selectors
     
     @objc func handleTextInputChange() {
+        // 텍스트가 있을 경우 placeholderLabel은 안보이기, 텍스트가 없을 경우 placeholderLabel 나타나기
         placeholderLabel.isHidden = !text.isEmpty
     }
 }

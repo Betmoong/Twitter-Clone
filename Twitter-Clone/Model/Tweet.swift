@@ -13,11 +13,11 @@ struct Tweet {
     var likes: Int
     var timestamp: Date!
     let retweetCount: Int
-    var user: User
+    var user: User // user 속성을 사용하기 위함
     var didLike = false
     var replyingTo: String?
     
-    var isReply: Bool { return replyingTo != nil }
+    var isReply: Bool { return replyingTo != nil } // TweetCell의 replyLabel을 표시할지 말지 결정하는 변수
     
     init(user:User, tweetID: String, dictionary: [String: Any]) {
         self.tweetID = tweetID

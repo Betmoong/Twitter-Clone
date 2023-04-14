@@ -19,11 +19,13 @@ struct TweetViewModel {
     }
     
     var timestamp: String {
+        // 날짜를 어떻게 나타날지
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.second, .minute, .hour, .day, .weekOfMonth]
         formatter.maximumUnitCount = 1
         formatter.unitsStyle = .abbreviated
-        let now = Date()
+        let now = Date() // 현재 시간
+        // 트윗했을 때의 시간과 현재 시간을 비교
         return formatter.string(from: tweet.timestamp, to: now) ?? ""
     }
     
@@ -96,12 +98,13 @@ struct TweetViewModel {
     
     // MARK: - Helpers
     
+    // label의 텍스트 수에 따라 높이를 반환해주는 함수
     func size(forWidth width: CGFloat, font: UIFont) -> CGSize {
-        let measurementLabel = UILabel()
+        let measurementLabel = UILabel()    // caption의 길이를 측정하는 UILabel
         measurementLabel.text = tweet.caption
         measurementLabel.font = font
         measurementLabel.numberOfLines = 0
-        measurementLabel.lineBreakMode = .byWordWrapping
+        measurementLabel.lineBreakMode = .byWordWrapping    // 단어 단위로 줄바꿈
         measurementLabel.translatesAutoresizingMaskIntoConstraints = false
         measurementLabel.widthAnchor.constraint(equalToConstant: width).isActive = true
         return measurementLabel.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)

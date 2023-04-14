@@ -38,10 +38,12 @@ struct EditProfileViewModel {
         }
     }
     
+    // option이 bio면, TextFiled를 숨기고 TextView를 표시
     var shouldHideTextField: Bool {
         return option == .bio
     }
     
+    // option이 bio가 아니면, TextView를 숨기고 TextField를 표시
     var shouldHideTextView: Bool {
         return option != .bio
     }

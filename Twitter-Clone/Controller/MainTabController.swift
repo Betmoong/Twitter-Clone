@@ -20,10 +20,13 @@ class MainTabController: UITabBarController {
     private var buttonConfig: ActionButtonConfiguration = .tweet
     
     var user: User? {
+        // 값이 들어오거나 변한 경우 호출, fetchUser()에서 self.user = user로 값을 받는다.
         didSet {
+            // viewControllers = [nav1, nav2, nav3, nav4]에서 [0]으로, FeedController을 부른 뒤에,
             guard let nav = viewControllers?[0] as? UINavigationController else { return }
+            // FeedController의 속성 값을 사용할 수 있도록 타입 캐스팅을 한다.
             guard let feed = nav.viewControllers.first as? FeedController else { return }
-            
+            // 받아온 값을 feed.user에 넣어준다.
             feed.user = user
         }
     }
@@ -48,6 +51,7 @@ class MainTabController: UITabBarController {
     // MARK: - API
     
     func fetchUser() {
+        // 현재 사용자 정보 가져오기
         guard let uid = Auth.auth().currentUser?.uid else { return }
         UserService.shared.fetchUser(uid: uid) { user in
             self.user = user

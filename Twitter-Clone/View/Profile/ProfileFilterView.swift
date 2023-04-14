@@ -9,6 +9,7 @@ import UIKit
 
 private let reuseIdentifier = "ProfileFilterCell"
 
+// ProfileFilterCell이 클릭되었을 때 underlineView가 움직이는지 아닌지
 protocol ProfileFilterViewDelegate: AnyObject {
     func filterView(_ view: ProfileFilterView, didSelect index: Int)
 }
@@ -41,6 +42,7 @@ class ProfileFilterView: UIView {
         
         collectionView.register(ProfileFilterCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
+        // ProfileController가 표시되었을 때 0번 째 열이 기본 선택되어 있는 걸로 설정
         let selectedIndexPath = IndexPath(row: 0, section: 0)
         collectionView.selectItem(at: selectedIndexPath, animated: true, scrollPosition: .left)
         
@@ -65,6 +67,7 @@ class ProfileFilterView: UIView {
 
 extension ProfileFilterView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // ProfileFilterOptions 열거형의 모든 케이스 수를 UICollectionView의 아이템 수로 반환
         return ProfileFilterOptions.allCases.count
     }
 
@@ -81,10 +84,12 @@ extension ProfileFilterView: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 
 extension ProfileFilterView: UICollectionViewDelegate {
+    // UICollectionView에서 아이템을 선택했을 때 선택된 아이템의 정보를 delegate 객체에 전달,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         let xPosition = cell?.frame.origin.x ?? 0
         
+        // 선택된 아이템의 셀에 밑줄 애니메이션을 적용
         UIView.animate(withDuration: 0.3) {
             self.underlineView.frame.origin.x = xPosition
         }
@@ -98,6 +103,7 @@ extension ProfileFilterView: UICollectionViewDelegate {
 extension ProfileFilterView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let count = CGFloat(ProfileFilterOptions.allCases.count)
+        // filterView의 열을 나눈다.(트위터 앱에서는 3개)
         return CGSize(width: frame.width / count, height: frame.height)
     }
     

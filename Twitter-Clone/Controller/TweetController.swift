@@ -16,14 +16,18 @@ class TweetController: UICollectionViewController {
     
     private let tweet: Tweet
     private var actionSheetLauncher: ActionSheetLauncher!
+    // 답글이 달릴 때마다 뷰를 리로드
     private var replies = [Tweet]() {
         didSet { collectionView.reloadData() }
     }
     
     // MARK: - Lifecycle
     
+    // Feed에서 데이터 값을 가져올 수 있도록 init 생성
     init(tweet: Tweet) {
+        // Feed에서 받아온 tweet을 TweetController에 있는 tweet에 넣기
         self.tweet = tweet
+        // tweet을 받아오기 위해, UICollectionViewFlowLayout()을 넣기
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
@@ -76,6 +80,7 @@ extension TweetController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TweetCell
+        // cell의 tweet은 replies에서 가져오는데, indexPath.row의 순서대로 가져온다.
         cell.tweet = replies[indexPath.row]
         return cell
     }
@@ -84,6 +89,7 @@ extension TweetController {
 // MARK: - UICollectionViewDelegate
 
 extension TweetController {
+    // TweetHeader를 사용하기 위한 메서드
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! TweetHeader
         header.tweet = tweet
@@ -95,6 +101,8 @@ extension TweetController {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension TweetController: UICollectionViewDelegateFlowLayout {
+    
+    // 헤더의 사이즈
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
         let viewModel = TweetViewModel(tweet: tweet)
@@ -103,6 +111,7 @@ extension TweetController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: view.frame.width, height: captionHeight + 260)
     }
     
+    // cell의 사이즈 조절
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 120)
     }
@@ -119,9 +128,11 @@ extension TweetController: TweetHeaderDelegate {
     }
     
     func showActionSheet() {
+        // 현재 사용자의 트윗인 경우
         if tweet.user.isCurrentUser {
             showActionSheet(forUser: tweet.user)
         } else {
+            // 팔로우 여부를 확인 후, 해당 정보를 ActionSheetLauncher에 넘김
             UserService.shared.checkIfUserIsFollowed(uid: tweet.user.uid) { isFollowed in
                 var user = self.tweet.user
                 user.isFollowed = isFollowed

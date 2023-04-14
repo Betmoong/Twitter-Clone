@@ -34,6 +34,7 @@ class NotificationsController: UITableViewController {
     // MARK: - Selectors
     
     @objc func handleRefresh() {
+        // 새로고침 할 때마다 Notifications 가져오기
         fetchNotifications()
     }
     
@@ -53,9 +54,12 @@ class NotificationsController: UITableViewController {
         guard !notifications.isEmpty else { return }
         
         notifications.forEach { notification in
+            // 알림이 온 사용자를 팔로우하는 지 확인
             guard case .follow = notification.type else { return }
+            // 사용자가 해당 사용자에게 동일한 알림을 보내도록 하기
             let user = notification.user
             
+            // 팔로우가 되어 있는 지 확인
             UserService.shared.checkIfUserIsFollowed(uid: user.uid) { isFollowed in
                 if let index = self.notifications.firstIndex(where: { $0.user.uid ==
                     notification.user.uid }) {

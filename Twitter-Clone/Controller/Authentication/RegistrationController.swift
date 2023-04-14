@@ -137,7 +137,7 @@ class RegistrationController: UIViewController {
         view.backgroundColor = .twitterBlue
         
         imagePicker.delegate = self
-        imagePicker.allowsEditing = true
+        imagePicker.allowsEditing = true // 수정 가능 여부
         
         view.addSubview(plusPhotoButton)
         plusPhotoButton.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor)

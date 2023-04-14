@@ -19,6 +19,7 @@ class FeedController: UICollectionViewController {
     }
     
     private var tweets = [Tweet]() {
+        // 데이터를 가져올 때, collectionView를 다시 리로드 (데이터를 아직 가져오지 못한 상태에서 View가 더 빠르게 나타나기 때문)
         didSet { collectionView.reloadData() }
     }
     
@@ -54,10 +55,11 @@ class FeedController: UICollectionViewController {
         collectionView.refreshControl?.beginRefreshing()
         
         TweetService.shared.fetchTweets { tweets in
+            // 가져온 데이터를 [tweets] 배열에 넘김
             self.tweets = tweets.sorted(by: { $0.timestamp > $1.timestamp })
-            self.checkIfUserLikedTweets()
+            self.checkIfUserLikedTweets()   // 사용자가 해당 트윗을 좋아하는 지 확인하는 메서드
                         
-            self.collectionView.refreshControl?.endRefreshing()
+            self.collectionView.refreshControl?.endRefreshing() // 트윗을 시간 순서대로 정렬
         }
     }
     
@@ -86,7 +88,7 @@ class FeedController: UICollectionViewController {
         imageView.setDimensions(width: 44, height: 44)
         navigationItem.titleView = imageView
         
-        let refreshControl = UIRefreshControl()
+        let refreshControl = UIRefreshControl() // 아래로 스크롤하면 새로고침
         refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         collectionView.refreshControl = refreshControl
     }
@@ -98,6 +100,8 @@ class FeedController: UICollectionViewController {
         profileImageView.setDimensions(width: 32, height: 32)
         profileImageView.layer.cornerRadius = 32 / 2
         profileImageView.layer.masksToBounds = true
+        
+        // 프로필 이미지를 탭할 경우, 작동할 수 있도록 설정
         profileImageView.isUserInteractionEnabled = true
         
         let tab = UITapGestureRecognizer(target: self, action: #selector(handleProfileImageTap))
@@ -113,20 +117,25 @@ class FeedController: UICollectionViewController {
 // MARK: - UICollectionViewDelegate/DataSource
 
 extension FeedController {
+    // 섹션의 항목 수
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return tweets.count
     }
     
+    // 어떤 cell을 보여줄 건지
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifire, for: indexPath) as! TweetCell
         
         cell.delegate = self
+        
+        // 각 셀의 순서에 맞게 TweetCell에 있는 Tweet에 넣어준다.
         cell.tweet = tweets[indexPath.row]
         
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Feed에 있는 tweet을 indexPath.row을 통해 몇 번째 tweet이 클릭되었는 지 확인 후, 넘겨준다.
         let controller = TweetController(tweet: tweets[indexPath.row])
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -135,7 +144,9 @@ extension FeedController {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension FeedController: UICollectionViewDelegateFlowLayout {
+    // cell의 사이즈 조절
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // 선택한 cell을 넘겨준다.
         let viewModel = TweetViewModel(tweet: tweets[indexPath.row])
         let height = viewModel.size(forWidth: view.frame.width, font: UIFont.systemFont(ofSize: 14)).height
         return CGSize(width: view.frame.width, height: height + 85)

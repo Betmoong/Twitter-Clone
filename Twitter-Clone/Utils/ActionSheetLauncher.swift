@@ -25,6 +25,7 @@ class ActionSheetLauncher: NSObject {
     weak var delegate: ActionSheetLauncherDelegate?
     private var tableViewHeight: CGFloat?
     
+    // 뒷 배경 흐리게
     private lazy var blackView: UIView = {
         let view = UIView()
         view.alpha = 0
@@ -93,6 +94,7 @@ class ActionSheetLauncher: NSObject {
         guard let window = windowScene?.windows.first(where: { $0.isKeyWindow }) else { return }
         self.window = window
         
+        // 뒤에 흐린 검은색 배경 설정
         window.addSubview(blackView)
         blackView.frame = window.frame
         
@@ -138,9 +140,13 @@ extension ActionSheetLauncher: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension ActionSheetLauncher: UITableViewDelegate {
+    
+    // 특정 섹션의 footerView 요청
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return footerView
     }
+    
+    // 특정 섹션의 footerView 높이 지정
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 60
     }

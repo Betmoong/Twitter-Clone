@@ -50,6 +50,7 @@ struct NotificationViewModel {
         return user.profileImageUrl
     }
     
+    // 알람이 팔로우 타입일 경우, 팔로우 버튼 표시
     var shouldHideFollowButton: Bool {
         return type != .follow
     }

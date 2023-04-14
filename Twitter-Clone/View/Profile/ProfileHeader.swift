@@ -193,9 +193,14 @@ class ProfileHeader: UICollectionReusableView {
 
 // MARK: - ProfileFilterViewDelegate
 
+// ProfileFilterView에서 선택된 필터 정보를 전달하고, 해당 정보를 처리하는 추가 작업을 수행하는 역할
 extension ProfileHeader: ProfileFilterViewDelegate {
     func filterView(_ view: ProfileFilterView, didSelect index: Int) {
+        // 필터를 사용하여 ProfileHeader에서 Controller로 작업을 위임하기 위함
         guard let filter = ProfileFilterOptions(rawValue: index) else { return }
+        
+        // ProfileFilterView -> ProfileHeader -> ProfileController의 순서로 delegate를 통해 기능 전달
+        // ProfileFilterView에서 위임을 받고 ProfileController로 전달
         delegate?.didSelect(filter: filter)
     }
 }

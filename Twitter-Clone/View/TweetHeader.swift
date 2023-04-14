@@ -31,6 +31,7 @@ class TweetHeader: UICollectionReusableView {
         iv.layer.cornerRadius = 48 / 2
         iv.backgroundColor = .twitterBlue
         
+        // UIImageView는 UIButton처럼 클릭을 지원하지 않기 때문에, UITapGestureRecognizer을 사용
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileImageTapped))
         iv.addGestureRecognizer(tap)
         iv.isUserInteractionEnabled = true

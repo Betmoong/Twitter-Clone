@@ -30,6 +30,7 @@ class NotificationCell: UITableViewCell {
         iv.layer.cornerRadius = 40 / 2
         iv.backgroundColor = .twitterBlue
         
+        // UIImageView는 UIButton처럼 클릭을 지원하지 않기 때문에, UITapGestureRecognizer을 사용
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileImageTapped))
         iv.addGestureRecognizer(tap)
         iv.isUserInteractionEnabled = true
@@ -64,6 +65,7 @@ class NotificationCell: UITableViewCell {
         stack.spacing = 8
         stack.alignment = .center
         
+        // UITableViewCell 위에 상위 contentView가 있기 때문에 그 위에 올려주어야 한다.
         contentView.addSubview(stack)
         stack.centerY(inView: self, leftAnchor: leftAnchor, paddingLeft: 12)
         stack.anchor(right: rightAnchor, paddingRight: 12)

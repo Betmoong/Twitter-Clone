@@ -23,6 +23,8 @@ class ProfileFilterCell: UICollectionViewCell {
         return label
     }()
     
+    // cell이 선택되었을 때 didSet이 실행되어 글자색이 변한다.
+    // "didSet"은 속성이 변경되었을 때 호출되는 프로퍼티 옵저버(observer)
     override var isSelected: Bool {
         didSet {
             titleLabel.font = isSelected ? UIFont.boldSystemFont(ofSize: 16) : UIFont.systemFont(ofSize: 14)

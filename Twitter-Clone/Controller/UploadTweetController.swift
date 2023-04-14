@@ -13,7 +13,7 @@ class UploadTweetController: UIViewController {
     // MARK: - Properties
     
     private let user: User
-    private let config: UploadTweetConfiguration
+    private let config: UploadTweetConfiguration    // 일반 트윗인지 답장 트윗인지 구분하는 enum
     private lazy var viewModel = UploadTweetViewModel(config: config)
     
     private lazy var actionButton: UIButton = {
@@ -55,6 +55,7 @@ class UploadTweetController: UIViewController {
     
     // MARK: - Lifecycle
     
+    // user 데이터를 가져오는 변수
     init(user: User, config: UploadTweetConfiguration) {
         self.user = user
         self.config = config
@@ -86,6 +87,7 @@ class UploadTweetController: UIViewController {
                 return
             }
             
+            // 답장인 케이스만 상대에게 알람이 가게 하기
             if case .reply(let tweet) = self.config {
                 NotificationService.shared.uploadNotification(toUser: tweet.user,
                                                               type: .reply,

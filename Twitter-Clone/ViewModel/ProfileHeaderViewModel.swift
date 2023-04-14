@@ -40,10 +40,12 @@ struct ProfileHeaderViewModel {
     }
     
     var actionButtonTitle: String {
+        // 현재 사용자가 자신의 프로필을 열람할 경우
         if user.isCurrentUser {
             return "Edit Profile"
         }
         
+        // 열람하는 프로필의 사용자가 팔로우가 안되어 있고, 현재 사용자가 아닐경우
         if !user.isFollowed && !user.isCurrentUser {
             return "Follow"
         }

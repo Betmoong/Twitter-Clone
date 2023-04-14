@@ -23,10 +23,10 @@ class EditProfileController: UITableViewController {
     private let footerView = EditProfileFooter()
     private let imagePicker = UIImagePickerController()
     weak var delegate: EditProfileControllerDelegate?
-    private var userInfoChanged = false
+    private var userInfoChanged = false // 사용자가 프로필을 편집 했는 지 여부
     
-    private var imageChanged: Bool {
-        return selectedImage != nil
+    private var imageChanged: Bool {    // 프로필 이미지를 변경했는 지 여부
+        return selectedImage != nil     // 선택한 이미지에 값이 있을 경우 이미지가 변경되었다는 것을 의미
     }
     
     private var selectedImage: UIImage? {
@@ -59,8 +59,8 @@ class EditProfileController: UITableViewController {
     
     @objc func handleDone() {
         view.endEditing(true)
+        // 이미지를 변경하거나 사용자 정보를 바꾼 경우에만 실행
         guard imageChanged || userInfoChanged else { return }
-        
         updateUserData()
     }
     

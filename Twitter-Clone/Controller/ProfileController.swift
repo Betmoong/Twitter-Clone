@@ -17,7 +17,9 @@ class ProfileController: UICollectionViewController {
     
     private var user: User
     
+    // filter에 어떤 값이 들어왔는 지 확인하는 변수, 값을 받고 currentDataSource로 이동
     private var selectedFilter: ProfileFilterOptions = .tweets {
+        // 데이터를 가져오면, 컬렉션뷰 리로드
         didSet { collectionView.reloadData() }
     }
     
@@ -25,6 +27,7 @@ class ProfileController: UICollectionViewController {
     private var likedTweets = [Tweet]()
     private var replies = [Tweet]()
     
+    // ProfileHeaderDelegate에 어떤 filter가 선택되었는 지 알려주는 변수
     private var currentDataSource: [Tweet] {
         switch selectedFilter {
         case .tweets: return tweets
@@ -77,6 +80,7 @@ class ProfileController: UICollectionViewController {
     
     func fetchReplies() {
         TweetService.shared.fetchReplies(forUser: user) { tweets in
+            // 가져온 데이터를 tweets에 넣음
             self.replies = tweets
         }
     }
@@ -88,8 +92,10 @@ class ProfileController: UICollectionViewController {
         }
     }
     
+    // 사용자의 팔로워 및 팔로잉이 몇 명인지 값을 반환
     func fetchUserStats() {
         UserService.shared.fetchUserStats(uid: user.uid) { stats in
+            // 가져온 상태를 user에 넣어주기
             self.user.stats = stats
             self.collectionView.reloadData()
         }
@@ -128,6 +134,7 @@ extension ProfileController {
 // MARK: - UICollectionViewDelegate
 
 extension ProfileController {
+    // ProfileHeader를 사용하기 위한 메서드
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! ProfileHeader
         header.user = user
@@ -136,6 +143,7 @@ extension ProfileController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //Feed에 있는 tweet을 indexPath.row을 통해 몇 번째 tweet이 클릭되었는 지 확인 후, 이를 넘겨준다.
         let controller = TweetController(tweet: currentDataSource[indexPath.row])
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -144,6 +152,8 @@ extension ProfileController {
 // MARK: - UICollectionViewDelegateFlowLayout
 
 extension ProfileController: UICollectionViewDelegateFlowLayout {
+    
+    // 헤더의 사이즈 조절
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
         var height: CGFloat = 300
@@ -155,10 +165,13 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: view.frame.width, height: height)
     }
     
+    // cell의 사이즈 조절
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // 선택한 cell을 넘겨준다.
         let viewModel = TweetViewModel(tweet: currentDataSource[indexPath.row])
         var height = viewModel.size(forWidth: view.frame.width, font: UIFont.systemFont(ofSize: 14)).height + 85
         
+        // 가져온 트윗이 답장 상태일 경우, 높이를 20 더하여 보여준다.
         if currentDataSource[indexPath.row].isReply {
             height += 20
         }
@@ -172,6 +185,8 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
 
 extension ProfileController: ProfileHeaderDelegate {
     func didSelect(filter: ProfileFilterOptions) {
+        // ProfileFilterView -> ProfileHeader -> ProfileController 순서대로 delegate를 통해 기능 전달
+        // ProfileHeader에서 위임받음
         self.selectedFilter = filter
     }
     
@@ -195,6 +210,7 @@ extension ProfileController: ProfileHeaderDelegate {
                 self.user.isFollowed = true
                 self.collectionView.reloadData()
                 
+                // 팔로우할 때만 알림 보내기
                 NotificationService.shared.uploadNotification(toUser: self.user, type: .follow)
             }
         }
