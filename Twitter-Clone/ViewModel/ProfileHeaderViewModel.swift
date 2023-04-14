@@ -35,6 +35,10 @@ struct ProfileHeaderViewModel {
         return attributedText(withValue: user.stats?.following ?? 0, text: "following")
     }
     
+    var bioString: String? {
+        return user.bio
+    }
+    
     var actionButtonTitle: String {
         if user.isCurrentUser {
             return "Edit Profile"
@@ -50,7 +54,6 @@ struct ProfileHeaderViewModel {
         
         return "Loading"
     }
-    
     
     init(user: User) {
         self.user = user
