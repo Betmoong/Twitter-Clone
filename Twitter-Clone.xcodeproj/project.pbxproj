@@ -52,7 +52,7 @@
 		5CCA531129E6D57D0072FC9D /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA531029E6D57D0072FC9D /* EditProfileViewModel.swift */; };
 		5CCA531329E6D6110072FC9D /* EditProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCA531229E6D6110072FC9D /* EditProfileCell.swift */; };
 		5CF432D929CB148200D7CECE /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432D829CB148200D7CECE /* FeedController.swift */; };
-		5CF432DB29CB14B000D7CECE /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432DA29CB14B000D7CECE /* ExploreController.swift */; };
+		5CF432DB29CB14B000D7CECE /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432DA29CB14B000D7CECE /* SearchController.swift */; };
 		5CF432E129CB14F900D7CECE /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432E029CB14F900D7CECE /* NotificationsController.swift */; };
 		5CF432E329CB151900D7CECE /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF432E229CB151900D7CECE /* ConversationsController.swift */; };
 		5CF70FDA29D17DBF00728C0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CF70FD929D17DBF00728C0D /* GoogleService-Info.plist */; };
@@ -130,7 +130,7 @@
 		5CCA531029E6D57D0072FC9D /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		5CCA531229E6D6110072FC9D /* EditProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileCell.swift; sourceTree = "<group>"; };
 		5CF432D829CB148200D7CECE /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
-		5CF432DA29CB14B000D7CECE /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
+		5CF432DA29CB14B000D7CECE /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		5CF432E029CB14F900D7CECE /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		5CF432E229CB151900D7CECE /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 		5CF70FD929D17DBF00728C0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -241,7 +241,7 @@
 				5CBDFF7D29CDBEFE00FB262B /* Authentication */,
 				5C320A3A29CAD87900D1265C /* MainTabController.swift */,
 				5CF432D829CB148200D7CECE /* FeedController.swift */,
-				5CF432DA29CB14B000D7CECE /* ExploreController.swift */,
+				5CF432DA29CB14B000D7CECE /* SearchController.swift */,
 				5CF432E029CB14F900D7CECE /* NotificationsController.swift */,
 				5CF432E229CB151900D7CECE /* ConversationsController.swift */,
 				5C389A2B29D866F400A9D617 /* UploadTweetController.swift */,
@@ -429,7 +429,7 @@
 				5C2FAB9F29CF3E8900BCE64E /* Utilities.swift in Sources */,
 				5CCA530A29E6C0E00072FC9D /* EditProfileController.swift in Sources */,
 				5CC5F11429E54E6600E63D4B /* ActionSheetCell.swift in Sources */,
-				5CF432DB29CB14B000D7CECE /* ExploreController.swift in Sources */,
+				5CF432DB29CB14B000D7CECE /* SearchController.swift in Sources */,
 				5CCA530829E596B20072FC9D /* NotificationViewModel.swift in Sources */,
 				5C3BB55129D2C6150031EC59 /* Constants.swift in Sources */,
 				5C977E8229E445A50012D732 /* TweetController.swift in Sources */,
