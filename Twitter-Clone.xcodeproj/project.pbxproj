@@ -35,6 +35,7 @@
 		5C9C84AB29D5633B0036691E /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5C9C84AA29D5633B0036691E /* SDWebImageMapKit */; };
 		5CAE46C829D9F60F00F423B5 /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE46C729D9F60F00F423B5 /* InputTextView.swift */; };
 		5CB1F3CB29E81EE700A3BB27 /* ActiveLabel in Frameworks */ = {isa = PBXBuildFile; productRef = 5CB1F3CA29E81EE700A3BB27 /* ActiveLabel */; };
+		5CB1F3CD29E9098900A3BB27 /* EditProfileFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1F3CC29E9098900A3BB27 /* EditProfileFooter.swift */; };
 		5CBDFF7A29CD8F6F00FB262B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDFF7929CD8F6F00FB262B /* Extensions.swift */; };
 		5CBDFF7F29CDBF0E00FB262B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDFF7E29CDBF0E00FB262B /* LoginController.swift */; };
 		5CBDFF8129CDBF9000FB262B /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBDFF8029CDBF9000FB262B /* RegistrationController.swift */; };
@@ -112,6 +113,7 @@
 		5C9C84A329D544B80036691E /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5C9C84A529D54E110036691E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5CAE46C729D9F60F00F423B5 /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
+		5CB1F3CC29E9098900A3BB27 /* EditProfileFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileFooter.swift; sourceTree = "<group>"; };
 		5CBDFF7929CD8F6F00FB262B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5CBDFF7E29CDBF0E00FB262B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		5CBDFF8029CDBF9000FB262B /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				5C83251929DAEA8500A69E0A /* ProfileHeader.swift */,
 				5CCA530E29E6D1480072FC9D /* EditProfileHeader.swift */,
 				5CCA531229E6D6110072FC9D /* EditProfileCell.swift */,
+				5CB1F3CC29E9098900A3BB27 /* EditProfileFooter.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				5CC5F11629E5513400E63D4B /* ActionSheetViewModel.swift in Sources */,
 				5CCA530629E58BB80072FC9D /* NotificationCell.swift in Sources */,
 				5CCA531129E6D57D0072FC9D /* EditProfileViewModel.swift in Sources */,
+				5CB1F3CD29E9098900A3BB27 /* EditProfileFooter.swift in Sources */,
 				5CBDFF7F29CDBF0E00FB262B /* LoginController.swift in Sources */,
 				5CBDFF8129CDBF9000FB262B /* RegistrationController.swift in Sources */,
 				5C83251C29DBCEEA00A69E0A /* ProfileFilterView.swift in Sources */,

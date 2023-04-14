@@ -148,7 +148,6 @@ extension ProfileController: UICollectionViewDelegateFlowLayout {
         var height: CGFloat = 300
         
         if user.bio != nil {
-            print("DEBUG: User bio is \(user.bio)")
             height += 40
         }
         

@@ -19,6 +19,7 @@ class EditProfileController: UITableViewController {
     
     private var user: User
     private lazy var headerView = EditProfileHeader(user: user)
+    private let footerView = EditProfileFooter()
     private let imagePicker = UIImagePickerController()
     weak var delegate: EditProfileControllerDelegate?
     private var userInfoChanged = false
@@ -66,19 +67,16 @@ class EditProfileController: UITableViewController {
     
     func updateUserData() {
         if imageChanged && !userInfoChanged {
-            print("DEBUG: Changed image and not data")
             updateProfileImage()
         }
         
         if userInfoChanged && !imageChanged {
-            print("DEBUG: Changed data and not image..")
             UserService.shared.saveUserData(user: user) { err, ref in
                 self.delegate?.controller(self, wantsToUpdate: self.user)
             }
         }
         
         if userInfoChanged && imageChanged {
-            print("DEBUG: Changed both..")
             UserService.shared.saveUserData(user: user) { err, ref in
                 self.updateProfileImage()
             }
@@ -118,9 +116,11 @@ class EditProfileController: UITableViewController {
     func configureTableView() {
         tableView.tableHeaderView = headerView
         headerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 180)
-        tableView.tableFooterView = UIView()
-        
         headerView.delegate = self
+
+        footerView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 100)
+        tableView.tableFooterView = footerView
+        footerView.delegate = self
         
         tableView.register(EditProfileCell.self, forCellReuseIdentifier: reuseIdentifier)
     }
@@ -197,5 +197,13 @@ extension EditProfileController: EditProfileCellDelegate {
         case .bio:
             user.bio = cell.bioTextView.text
         }
+    }
+}
+
+// MARK: - EditProfileFooterDelegate
+
+extension EditProfileController: EditProfileFooterDelegate {
+    func handleLogout() {
+        print("DEBUG: Handle Logout..")
     }
 }
